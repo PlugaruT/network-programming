@@ -14,8 +14,6 @@ serverSocket.bind((host, port))
 serverSocket.listen(5)
 
 def client_thread(connection):
-    f = open('arn.jpg', 'rb')
-    l = f.read(1024)
     while True:
         data = connection.recv(512)
         if not data: break
@@ -38,11 +36,6 @@ def client_thread(connection):
             reply = '42'
         elif command == 'rev':
             reply = tokens[1][::-1]
-        elif command == 'pic':
-            while True:
-                connection.send(l)
-                l = f.read(1024)
-                break
         elif command == 'hastalavista':
             connection.sendall("I'll be back!")
             connection.close()

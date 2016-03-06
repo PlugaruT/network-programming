@@ -5,7 +5,7 @@ from thread import *
 
 serverSocket = socket()
 host = 'localhost'
-port = 1233
+port = 1234
 message = 'Hello Master'
 
 serverSocket.bind((host, port))
@@ -45,6 +45,14 @@ def client_thread(connection):
         elif command == 'close':
             connection.close()
             break
+        elif command == 'pic':
+            f = open('arn.jpg', 'rb')
+            f.seek(0, 2)
+            pic_size = f.tell()
+            connection.sendall(str(pic_size))
+            f.seek(0)
+            connection.sendall(f.read(pic_size))
+            continue
         else:
             reply = 'Can you elaborate on that?'
 

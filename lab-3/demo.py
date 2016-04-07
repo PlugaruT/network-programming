@@ -74,6 +74,7 @@ if __name__ == "__main__":
     # start another thread, it will read stuff from the socket
     # and update the canvas if needed
     t = threading.Thread(target=worker, args=(root, canvas))
+    t.setDaemon(True)
     t.start()
     # drawing the canvas itself
     root.mainloop()

@@ -3,5 +3,5 @@
 2. HTTP crawler
 3. Shared Whiteboard
 4. Network Sniffer
-5. ...
+5. Reverse-engineere QuickChat 
 6. ...

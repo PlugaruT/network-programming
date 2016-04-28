@@ -33,7 +33,7 @@ def client_thread(connection):
             numbers = tokens[1].split('/')
             reply = str(int(numbers[0]) / int(numbers[1]))
         elif command[-1:] == "?":
-			#makes sure the command ends with a '?', not just contains one
+            #makes sure the command ends with a '?', not just contains one
             reply = '42'
         elif command == 'rev':
             reply = tokens[1][::-1]

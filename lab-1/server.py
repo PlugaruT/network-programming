@@ -32,7 +32,7 @@ def client_thread(connection):
         elif command == 'div':
             numbers = tokens[1].split('/')
             reply = str(int(numbers[0]) / int(numbers[1]))
-        elif command.find('?') > 0:
+        elif command[-1:] == "?":
             reply = '42'
         elif command == 'rev':
             reply = tokens[1][::-1]

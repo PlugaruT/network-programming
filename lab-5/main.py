@@ -47,7 +47,6 @@ def change_status(user_name, status):
     }
     return switcher.get(status, 'D' + user_name + '\x0000')
 
-
 # s.sendto(change_status('tudor', 'dnd'), ('<broadcast>', PORT))
 s.sendto(private_msg('tudor', 'tudor', 'aaaaaa'), ('<broadcast>', PORT))
 # s.sendto(public_msg('bardosik', 'Main', 'llllll'), ('<broadcast>', PORT))
